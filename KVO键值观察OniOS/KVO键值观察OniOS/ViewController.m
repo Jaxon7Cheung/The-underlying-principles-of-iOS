@@ -18,6 +18,8 @@
 
 @implementation ViewController
 
+// 反编译工具 - Hopper
+
 //  打印出某个类的所有方法名
 - (void)printMethodNamesOfClass:(Class)cls {
     unsigned int count;
@@ -90,10 +92,12 @@
 //    self.person1.age = 13;
     
     // Runtime动态创建的
-    //self.person1.isa == NSKVONotifying_Person
-    [self.person1 setAge: 12];
-    //self.person2.isa == Person
-    [self.person2 setAge: 13];
+//    //self.person1.isa == NSKVONotifying_Person
+//    [self.person1 setAge: 12];
+//    //self.person2.isa == Person
+//    [self.person2 setAge: 13];
+    
+    self.person1->_age = 12;
 }
 
 //  监听方法
