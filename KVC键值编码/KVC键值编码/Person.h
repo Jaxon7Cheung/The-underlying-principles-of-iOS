@@ -9,16 +9,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class Dog;
+@class Book;
+
 @interface Person : NSObject {
     @private
     int _age;
 }
 
-@property (nonatomic, copy, readonly) NSString* name;
-//@property (nonatomic, copy) NSString* name;
+//@property (nonatomic, copy, readonly) NSString* name;
+@property (nonatomic, copy) NSString* name;
 
-@property (nonatomic, strong) id ID;
-@property (nonatomic, assign) int age1;
+@property (nonatomic, strong)id ID;
+@property (nonatomic, assign)int age;
+@property (nonatomic, strong)Dog* dog;
+@property (nonatomic, strong)NSArray <Book *>* books;
 
 - (instancetype)initWithDictionary: (NSDictionary *)dict;
 - (instancetype)initWithDictionary2: (NSDictionary *)dict;

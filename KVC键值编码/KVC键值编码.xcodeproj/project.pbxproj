@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2050F6C2C182BF400EC5457 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = A2050F6B2C182BF300EC5457 /* Dog.m */; };
+		A2050F6F2C1843D200EC5457 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = A2050F6E2C1843D200EC5457 /* Book.m */; };
 		A2FA4E8E2ABECDBE0091A5B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FA4E8D2ABECDBE0091A5B8 /* main.m */; };
 		A2FA4E962ABECF7D0091A5B8 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FA4E952ABECF7D0091A5B8 /* Person.m */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A2050F6A2C182BF300EC5457 /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		A2050F6B2C182BF300EC5457 /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		A2050F6D2C1843D200EC5457 /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		A2050F6E2C1843D200EC5457 /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		A2FA4E8A2ABECDBE0091A5B8 /* KVC键值编码 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "KVC键值编码"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2FA4E8D2ABECDBE0091A5B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A2FA4E942ABECF7D0091A5B8 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -63,6 +69,10 @@
 				A2FA4E8D2ABECDBE0091A5B8 /* main.m */,
 				A2FA4E942ABECF7D0091A5B8 /* Person.h */,
 				A2FA4E952ABECF7D0091A5B8 /* Person.m */,
+				A2050F6A2C182BF300EC5457 /* Dog.h */,
+				A2050F6B2C182BF300EC5457 /* Dog.m */,
+				A2050F6D2C1843D200EC5457 /* Book.h */,
+				A2050F6E2C1843D200EC5457 /* Book.m */,
 			);
 			path = "KVC键值编码";
 			sourceTree = "<group>";
@@ -124,6 +134,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2050F6F2C1843D200EC5457 /* Book.m in Sources */,
+				A2050F6C2C182BF400EC5457 /* Dog.m in Sources */,
 				A2FA4E962ABECF7D0091A5B8 /* Person.m in Sources */,
 				A2FA4E8E2ABECDBE0091A5B8 /* main.m in Sources */,
 			);
