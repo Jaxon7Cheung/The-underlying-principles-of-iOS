@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A2050F6C2C182BF400EC5457 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = A2050F6B2C182BF300EC5457 /* Dog.m */; };
 		A2050F6F2C1843D200EC5457 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = A2050F6E2C1843D200EC5457 /* Book.m */; };
+		A2050F722C18500400EC5457 /* Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = A2050F712C18500400EC5457 /* Observer.m */; };
+		A2050F752C186D4400EC5457 /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = A2050F742C186D4400EC5457 /* Man.m */; };
+		A2050F7B2C19A62F00EC5457 /* NSArray+ZXYOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = A2050F7A2C19A62F00EC5457 /* NSArray+ZXYOperator.m */; };
 		A2FA4E8E2ABECDBE0091A5B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FA4E8D2ABECDBE0091A5B8 /* main.m */; };
 		A2FA4E962ABECF7D0091A5B8 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FA4E952ABECF7D0091A5B8 /* Person.m */; };
 /* End PBXBuildFile section */
@@ -30,6 +33,12 @@
 		A2050F6B2C182BF300EC5457 /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 		A2050F6D2C1843D200EC5457 /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		A2050F6E2C1843D200EC5457 /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		A2050F702C18500400EC5457 /* Observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
+		A2050F712C18500400EC5457 /* Observer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Observer.m; sourceTree = "<group>"; };
+		A2050F732C186D4400EC5457 /* Man.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
+		A2050F742C186D4400EC5457 /* Man.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Man.m; sourceTree = "<group>"; };
+		A2050F792C19A62F00EC5457 /* NSArray+ZXYOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+ZXYOperator.h"; sourceTree = "<group>"; };
+		A2050F7A2C19A62F00EC5457 /* NSArray+ZXYOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ZXYOperator.m"; sourceTree = "<group>"; };
 		A2FA4E8A2ABECDBE0091A5B8 /* KVC键值编码 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "KVC键值编码"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2FA4E8D2ABECDBE0091A5B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A2FA4E942ABECF7D0091A5B8 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -67,6 +76,12 @@
 			isa = PBXGroup;
 			children = (
 				A2FA4E8D2ABECDBE0091A5B8 /* main.m */,
+				A2050F792C19A62F00EC5457 /* NSArray+ZXYOperator.h */,
+				A2050F7A2C19A62F00EC5457 /* NSArray+ZXYOperator.m */,
+				A2050F732C186D4400EC5457 /* Man.h */,
+				A2050F742C186D4400EC5457 /* Man.m */,
+				A2050F702C18500400EC5457 /* Observer.h */,
+				A2050F712C18500400EC5457 /* Observer.m */,
 				A2FA4E942ABECF7D0091A5B8 /* Person.h */,
 				A2FA4E952ABECF7D0091A5B8 /* Person.m */,
 				A2050F6A2C182BF300EC5457 /* Dog.h */,
@@ -134,8 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2050F752C186D4400EC5457 /* Man.m in Sources */,
 				A2050F6F2C1843D200EC5457 /* Book.m in Sources */,
 				A2050F6C2C182BF400EC5457 /* Dog.m in Sources */,
+				A2050F7B2C19A62F00EC5457 /* NSArray+ZXYOperator.m in Sources */,
+				A2050F722C18500400EC5457 /* Observer.m in Sources */,
 				A2FA4E962ABECF7D0091A5B8 /* Person.m in Sources */,
 				A2FA4E8E2ABECDBE0091A5B8 /* main.m in Sources */,
 			);

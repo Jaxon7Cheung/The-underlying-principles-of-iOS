@@ -57,8 +57,13 @@
     if (self) {
         NSArray* keyArray = dict.allKeys;
         for (NSString* key in keyArray) {
+            id value = dict[key];
             //使用KVC时，key值与属性名一致
-            [self setValue: dict[key] forKey: key];
+            if (value) {
+                [self setValue: value forKey: key];
+            } else {
+                [self setValue: [NSNull null] forKey: key];
+            }
         }
     }
     return self;
@@ -70,6 +75,30 @@
         [self setValuesForKeysWithDictionary: dict];
     }
     return self;
+}
+
+- (NSDictionary<NSString *, id> *)myDictionaryWithValuesForKeys:(NSArray<NSString *> *)keys {
+    NSMutableDictionary <NSString *, id>* dict = [NSMutableDictionary dictionary];
+    
+    for (NSString* key in keys) {
+        id value = [self valueForKey: key];
+        if (value) {
+            dict[key] = value;
+        } else {
+            dict[key] = [NSNull null];
+        }
+    }
+    
+    return [dict copy];
+}
+
+- (BOOL)validateName:(id *)value error:(out NSError * _Nullable __autoreleasing *)outError {
+    NSString* name = *value;
+    BOOL result = NO;
+    if ([name isEqualToString:@"Jaxon"]) {
+        result = YES;
+    }
+    return result;
 }
 
 @end

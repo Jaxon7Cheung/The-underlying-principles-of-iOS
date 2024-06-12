@@ -26,12 +26,104 @@
 #import "Person.h"
 #import "Dog.h"
 #import "Book.h"
+#import "Observer.h"
+#import "Man.h"
+
+#import "objc/runtime.h"
+#import "NSArray+ZXYOperator.h"
+
+void collectionProperty(void) {
+//    NSArray* array = @[@1, @2, @3];
+//    NSArray* tempArray = @[@0, @1, @3];
+    Person* person = [[Person alloc] init];
+//    person.array = array;
+//    [person setValue: tempArray forKey: @"array"];
+//    NSLog(@"%@", [person valueForKey: @"array"]); //  0 1 3
+    person.array = @[@3, @7, @9];
+    
+    Observer* observer = [[Observer alloc] init];
+    [person addObserver: observer forKeyPath: @"array" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context: NULL];
+    
+    NSMutableArray* mutableArray = [person mutableArrayValueForKey: @"array"];
+    mutableArray[0] = @-1;
+    mutableArray[2] = @-2;
+    NSLog(@"%@", [person valueForKey: @"array"]);
+}
+
+void printNSArrayMethods(void) {
+    u_int count;  //  unsigned int
+    Method* methods = class_copyMethodList([NSSet class], &count);
+    for (int i = 0; i < count; ++i) {
+        Method method = methods[i];
+        SEL sel = method_getName(method);
+        NSLog(@"%d --- %@", i, NSStringFromSelector(sel));
+    }
+    
+    free(methods);
+}
+
+void selfDefinedOperator(void) {
+    //  4 4 5 35 75 245
+    NSArray* array = @[@5, @4, @4, @75, @245, @35];
+    NSNumber* num = [array valueForKeyPath: @"@medium.self"];
+    NSLog(@"%@", num);
+}
+
+void nonObject(void) {
+    ThreeFloats floats = {1., 2., 3.};
+    NSValue* value = [NSValue valueWithBytes: &floats objCType: @encode(ThreeFloats)];
+    
+    Man* man = [[Man alloc] init];
+    [man setValue: value forKeyPath: @"threeFloats"];
+}
+
+void confirmProperty(void) {
+    Person* person = [[Person alloc] init];
+    NSString* value = @"Jaxon";
+    NSString* key = @"name";
+    NSError* error;
+    BOOL result = [person validateValue: &value forKey: key error: &error];
+    
+    if (error) {
+        NSLog(@"error = %@", error);
+        return;
+    }
+    NSLog(@"%d",result);
+}
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        confirmProperty();  //  属性验证
+        
+        selfDefinedOperator();  //  自定义集合运算符
+        
+        printNSArrayMethods();  //  打印NSArray的方法列表
+        collectionProperty();  //  操作集合对象
+        
+// ----------------添加KVO监听----------------------------- //
+        
+        Man* mKVO = [[Man alloc] init];
+        Observer* observer = [[Observer alloc] init];
+        [mKVO addObserver: observer forKeyPath: @"age" options: NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context: NULL];
+        
+        //  通过KVC修改被监听对象的属性值
+        [mKVO setValue: @"21" forKey: @"age"];
+            /// [mKVO willChangeValueForKey: @"age"];
+            /// mKVO->_age = 21;
+            /// [mKVO didChangeValueForKey: @"age"];
+        
+        //  移除KVO监听
+        [mKVO removeObserver: observer forKeyPath: @"age" context: NULL];
+        
+        //就算修改的是实例变量，不是属性（没有setter、getter方法），通过KVC修改值依然会触发KVO
+        
+// ------------------------------------------------------- //
+        
         Person* person = [[Person alloc] init];
-//        person.name = @"Jack";
+//        person.name = @"Jaxon";
 //        NSLog(@"%@", person.name);
+        [person setName: @"Jaxon"];
+        NSLog(@"%@", [person name]);
 //
 //
         //哪怕是readonly，都可以通过KVC来访问
@@ -134,6 +226,25 @@ int main(int argc, const char * argv[]) {
         NSNumber* sumPrice = [personWithBooks valueForKeyPath: @"books.@sum.price"];
         NSLog(@"maxPrice: %@  minPrice: %@  averPrive: %@  sumPrice: %@ = %@", maxPrice, minPrice, averPrice, sumPrice, @(99 * 100 / 2));
         
+        NSArray* priceArr = @[@5, @4, @6, @4, @4, @75, @245, @35, @6];
+        NSMutableArray* bookArr = [NSMutableArray array];
+        for (int i = 0; i < priceArr.count; ++i) {
+            Book* book = [[Book alloc] init];
+            book.price = [priceArr[i] doubleValue];
+            [bookArr addObject: book];
+        }
+        NSArray* returnArr = [bookArr valueForKeyPath: @"@unionOfObjects.price"];
+        NSLog(@"%@", returnArr);
+        NSArray* returnDistinctArr = [bookArr valueForKeyPath: @"@distinctUnionOfObjects.price"];
+        NSLog(@"%@", returnDistinctArr);
+        
+        NSNumber* sum = [priceArr valueForKeyPath: @"@sum.self"];
+        NSLog(@"%@", sum);
+        
+        //
+        
     }
     return 0;
 }
+
+
