@@ -88,7 +88,7 @@ void confirmProperty(void) {
         NSLog(@"error = %@", error);
         return;
     }
-    NSLog(@"%d",result);
+    NSLog(@"%d", result);
 }
 
 int main(int argc, const char * argv[]) {

@@ -20,4 +20,14 @@
     NSLog(@"didChangeValueForKey - end - %@", key);
 }
 
+- (id)valueForUndefinedKey:(NSString *)key {
+    [super valueForUndefinedKey: key];
+    
+    return self;
+}
+
+- (void)setValue:(id)value forKeyPath:(NSString *)keyPath {
+    [super setValue: value forUndefinedKey: keyPath];
+}
+
 @end
