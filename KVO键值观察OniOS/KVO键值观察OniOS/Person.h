@@ -9,12 +9,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface Book : NSObject
+@property (nonatomic, assign)int price;
+@end
+
 @interface Person : NSObject {
     @public
     int _age;
 }
 
 @property (nonatomic, assign)int age;
+@property (nonatomic, copy)NSArray <Book *>* books;
 
 @end
 

@@ -9,8 +9,26 @@
 
 @implementation Person
 
+
+//  默认返回触发返回YES
++ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key {
+    BOOL automatic = NO;
+    if ([key isEqualToString: @"agee"]) {
+        automatic = NO;
+    } else {
+        automatic = [super automaticallyNotifiesObserversForKey: key];
+    }
+    return automatic;
+}
+
 - (void)setAge:(int)age {
-    _age = age;
+    if (_age != age) {
+        [self willChangeValueForKey: @"age"];
+        _age = age;
+        [self didChangeValueForKey: @"age"];
+    }
+    
+//    _age = age;
     
 //    NSLog(@"setAge:");
 }
@@ -35,5 +53,11 @@
 //    
 //    NSLog(@"didChangeValueForKey - end");
 //}
+
+//- (void)willChange:(NSKeyValueChange)changeKind valuesAtIndexes:(NSIndexSet *)indexes forKey:(NSString *)key {
+//    
+//}
+
+
 
 @end

@@ -15,24 +15,25 @@
 //    return NO;
 //}
 //
-//+ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key {
-//    BOOL isOpen = YES;
-//    if ([key isEqualToString: @"age"]) {
-//        isOpen = NO;
-//    }
-//    return isOpen;
-//}
++ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key {
+    BOOL isOpen = YES;
+    if ([key isEqualToString: @"age"]) {
+        isOpen = NO;
+    }
+    return isOpen;
+}
 
-//- (void)setAge:(int)age {
-//    
-//    //手动设置KVO
-//    
-//    if (_age != age) {
-//        [self willChangeValueForKey: @"age"];
-//        _age = age;
-//        [self didChangeValueForKey: @"age"];
-//    }
-//}
+
+- (void)setAge:(int)age {
+    
+    //手动设置KVO
+    
+    if (_age != age) {
+        [self willChangeValueForKey: @"age"];
+        _age = age;
+        [self didChangeValueForKey: @"age"];
+    }
+}
 
 - (void)registerObserver {
     NSKeyValueObservingOptions options = NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld;

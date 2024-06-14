@@ -10,6 +10,7 @@
 		A2050F302C1438BA00EC5457 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2050F2F2C1438BA00EC5457 /* main.m */; };
 		A2050F382C14394A00EC5457 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A2050F372C14394A00EC5457 /* Person.m */; };
 		A2050F3B2C1439BD00EC5457 /* Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = A2050F3A2C1439BC00EC5457 /* Observer.m */; };
+		A2050F7E2C1C3DFB00EC5457 /* Download.m in Sources */ = {isa = PBXBuildFile; fileRef = A2050F7D2C1C3DFB00EC5457 /* Download.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,8 @@
 		A2050F3A2C1439BC00EC5457 /* Observer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Observer.m; sourceTree = "<group>"; };
 		A2050F612C154B7600EC5457 /* NonCompile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NonCompile.h; sourceTree = "<group>"; };
 		A2050F622C154B7600EC5457 /* NonCompile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NonCompile.m; sourceTree = "<group>"; };
+		A2050F7C2C1C3DFB00EC5457 /* Download.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Download.h; sourceTree = "<group>"; };
+		A2050F7D2C1C3DFB00EC5457 /* Download.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Download.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				A2050F2F2C1438BA00EC5457 /* main.m */,
+				A2050F7C2C1C3DFB00EC5457 /* Download.h */,
+				A2050F7D2C1C3DFB00EC5457 /* Download.m */,
 				A2050F362C14394A00EC5457 /* Person.h */,
 				A2050F372C14394A00EC5457 /* Person.m */,
 				A2050F392C1439BC00EC5457 /* Observer.h */,
@@ -134,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2050F3B2C1439BD00EC5457 /* Observer.m in Sources */,
+				A2050F7E2C1C3DFB00EC5457 /* Download.m in Sources */,
 				A2050F382C14394A00EC5457 /* Person.m in Sources */,
 				A2050F302C1438BA00EC5457 /* main.m in Sources */,
 			);

@@ -16,7 +16,7 @@
 //        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 //    }
     
-    if ([keyPath isEqualToString: @"age"] || [keyPath isEqualToString: @"height"]) {
+    if ([keyPath isEqualToString: @"age"] || [keyPath isEqualToString: @"height"] || [keyPath isEqualToString: @"downloadProgress"]) {
         NSLog(@"监听到%@的%@属性值改变了 - %@ - context: %@", keyPath, object, change, context);
     } else {
         [super observeValueForKeyPath: keyPath ofObject: object change: change context: context];
