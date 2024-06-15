@@ -25,6 +25,8 @@
 /* Begin PBXFileReference section */
 		A2050F882C1CB04900EC5457 /* OC对象的本质 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OC对象的本质"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2050F8B2C1CB04900EC5457 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A2050F9A2C1DC6AC00EC5457 /* main-arm64.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "main-arm64.cpp"; sourceTree = "<group>"; };
+		A2050F9B2C1DC6AC00EC5457 /* main-Student.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "main-Student.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,8 @@
 			isa = PBXGroup;
 			children = (
 				A2050F8B2C1CB04900EC5457 /* main.m */,
+				A2050F9A2C1DC6AC00EC5457 /* main-arm64.cpp */,
+				A2050F9B2C1DC6AC00EC5457 /* main-Student.cpp */,
 			);
 			path = "OC对象的本质";
 			sourceTree = "<group>";
