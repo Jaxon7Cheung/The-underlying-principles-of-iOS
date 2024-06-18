@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A2050F8C2C1CB04900EC5457 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2050F8B2C1CB04900EC5457 /* main.m */; };
+		A2050FF62C21662500EC5457 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2050FF52C21662500EC5457 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A2050F862C1CB04900EC5457 /* CopyFiles */ = {
+		A2050FF02C21662500EC5457 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A2050F882C1CB04900EC5457 /* OC对象的本质 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OC对象的本质"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2050F8B2C1CB04900EC5457 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A2050FF22C21662500EC5457 /* 对象的分类 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "对象的分类"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2050FF52C21662500EC5457 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A2050F852C1CB04900EC5457 /* Frameworks */ = {
+		A2050FEF2C21662500EC5457 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,65 +38,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A2050F7F2C1CB04900EC5457 = {
+		A2050FE92C21662500EC5457 = {
 			isa = PBXGroup;
 			children = (
-				A2050F8A2C1CB04900EC5457 /* OC对象的本质 */,
-				A2050F892C1CB04900EC5457 /* Products */,
+				A2050FF42C21662500EC5457 /* 对象的分类 */,
+				A2050FF32C21662500EC5457 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A2050F892C1CB04900EC5457 /* Products */ = {
+		A2050FF32C21662500EC5457 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A2050F882C1CB04900EC5457 /* OC对象的本质 */,
+				A2050FF22C21662500EC5457 /* 对象的分类 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A2050F8A2C1CB04900EC5457 /* OC对象的本质 */ = {
+		A2050FF42C21662500EC5457 /* 对象的分类 */ = {
 			isa = PBXGroup;
 			children = (
-				A2050F8B2C1CB04900EC5457 /* main.m */,
+				A2050FF52C21662500EC5457 /* main.m */,
 			);
-			path = "OC对象的本质";
+			path = "对象的分类";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A2050F872C1CB04900EC5457 /* OC对象的本质 */ = {
+		A2050FF12C21662500EC5457 /* 对象的分类 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A2050F8F2C1CB04900EC5457 /* Build configuration list for PBXNativeTarget "OC对象的本质" */;
+			buildConfigurationList = A2050FF92C21662500EC5457 /* Build configuration list for PBXNativeTarget "对象的分类" */;
 			buildPhases = (
-				A2050F842C1CB04900EC5457 /* Sources */,
-				A2050F852C1CB04900EC5457 /* Frameworks */,
-				A2050F862C1CB04900EC5457 /* CopyFiles */,
+				A2050FEE2C21662500EC5457 /* Sources */,
+				A2050FEF2C21662500EC5457 /* Frameworks */,
+				A2050FF02C21662500EC5457 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "OC对象的本质";
-			productName = "OC对象的本质";
-			productReference = A2050F882C1CB04900EC5457 /* OC对象的本质 */;
+			name = "对象的分类";
+			productName = "对象的分类";
+			productReference = A2050FF22C21662500EC5457 /* 对象的分类 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A2050F802C1CB04900EC5457 /* Project object */ = {
+		A2050FEA2C21662500EC5457 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					A2050F872C1CB04900EC5457 = {
+					A2050FF12C21662500EC5457 = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
-			buildConfigurationList = A2050F832C1CB04900EC5457 /* Build configuration list for PBXProject "OC对象的本质" */;
+			buildConfigurationList = A2050FED2C21662500EC5457 /* Build configuration list for PBXProject "对象的分类" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -104,29 +104,29 @@
 				en,
 				Base,
 			);
-			mainGroup = A2050F7F2C1CB04900EC5457;
-			productRefGroup = A2050F892C1CB04900EC5457 /* Products */;
+			mainGroup = A2050FE92C21662500EC5457;
+			productRefGroup = A2050FF32C21662500EC5457 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A2050F872C1CB04900EC5457 /* OC对象的本质 */,
+				A2050FF12C21662500EC5457 /* 对象的分类 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A2050F842C1CB04900EC5457 /* Sources */ = {
+		A2050FEE2C21662500EC5457 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2050F8C2C1CB04900EC5457 /* main.m in Sources */,
+				A2050FF62C21662500EC5457 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		A2050F8D2C1CB04900EC5457 /* Debug */ = {
+		A2050FF72C21662500EC5457 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -187,7 +187,7 @@
 			};
 			name = Debug;
 		};
-		A2050F8E2C1CB04900EC5457 /* Release */ = {
+		A2050FF82C21662500EC5457 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -241,7 +241,7 @@
 			};
 			name = Release;
 		};
-		A2050F902C1CB04900EC5457 /* Debug */ = {
+		A2050FFA2C21662500EC5457 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -249,7 +249,7 @@
 			};
 			name = Debug;
 		};
-		A2050F912C1CB04900EC5457 /* Release */ = {
+		A2050FFB2C21662500EC5457 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -260,25 +260,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A2050F832C1CB04900EC5457 /* Build configuration list for PBXProject "OC对象的本质" */ = {
+		A2050FED2C21662500EC5457 /* Build configuration list for PBXProject "对象的分类" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A2050F8D2C1CB04900EC5457 /* Debug */,
-				A2050F8E2C1CB04900EC5457 /* Release */,
+				A2050FF72C21662500EC5457 /* Debug */,
+				A2050FF82C21662500EC5457 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A2050F8F2C1CB04900EC5457 /* Build configuration list for PBXNativeTarget "OC对象的本质" */ = {
+		A2050FF92C21662500EC5457 /* Build configuration list for PBXNativeTarget "对象的分类" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A2050F902C1CB04900EC5457 /* Debug */,
-				A2050F912C1CB04900EC5457 /* Release */,
+				A2050FFA2C21662500EC5457 /* Debug */,
+				A2050FFB2C21662500EC5457 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A2050F802C1CB04900EC5457 /* Project object */;
+	rootObject = A2050FEA2C21662500EC5457 /* Project object */;
 }

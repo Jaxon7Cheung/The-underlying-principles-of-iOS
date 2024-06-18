@@ -148,12 +148,45 @@ void testStudentOfPerson(void) {
 //
 //@end
 
+struct Person_IMPL {
+    struct NSObject_IMPL NSOBJECT_IVARS;  // 8
+    int _age;  // 4
+    int _height;  // 4
+    int _no;  // 4
+};  //  和为20，内存对齐交后：24
 
+@interface Person : NSObject {
+    int _age;
+    int _height;
+    int _no;
+}
+
+@end
+
+@implementation Person
+
+@end
+
+void testAllocSize(void) {
+    NSLog(@"%zd", sizeof(struct Person_IMPL));  //同class_getInstanceSize
+    // sizeof 运算符关键字 不是一个函数 编译过程中就会查看传入的类型并识别数据类型字节大小 编译时就会确定为一个常数
+    
+    //  内存分配注意的地方
+    Person* person = [[Person alloc] init];
+    NSLog(@"%zd %zd", class_getInstanceSize([Person class]), malloc_size((__bridge const void *)(person)));  // 16 16  //加了int _no;后  24 32
+    
+    NSLog(@"%zd", sizeof(person));  //??
+}
+// 在libmalloc源码中找 calloc 的实现
+// 操作系统在分配内存时，也会有“内存对齐”，所以 size 是 24，返回 32
+// 创建一个实例对象，至少需要内存class_getInstanceSize，实际分配内存malloc_size
+
+// GNU：gnu(gnu not unix) not Unix 开源组织
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        
+
     }
     return 0;
 }
