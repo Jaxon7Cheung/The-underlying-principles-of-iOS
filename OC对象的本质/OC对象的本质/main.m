@@ -24,7 +24,7 @@ struct NSObject_IMPL {
 
 //  typedef struct objc_class* Class;
 //  Class 是一个结构体指针，void*
-void testNSObjcet(void) {
+void testNSObject(void) {
     NSObject* obj = [[NSObject alloc] init];
     //  16 字节
     
@@ -34,7 +34,7 @@ void testNSObjcet(void) {
     //  Windows 、 MacOS 、 iOS
     //  模拟器（i386）、 32bit（armv7）、 64bit（arm64）
     //  指定平台：
-    //  xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc main.m -o main-aem64.cpp
+    //  xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc main.m -o main-arm64.cpp
     
     
     
@@ -185,7 +185,16 @@ void testAllocSize(void) {
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        Person* person = [Person alloc];
         
+        Person* person1 = [person init];
+        Person* person2 = [person init];
+        
+        NSLog(@"person = %@ ** %p ** %p", person, person, &person);
+        NSLog(@"person1 = %@ ** %p ** %p", person1, person1, &person1);
+        NSLog(@"person2 = %@ ** %p ** %p", person2, person2, &person2);
+        
+        [Person allocWithZone: nil];
 
     }
     return 0;
