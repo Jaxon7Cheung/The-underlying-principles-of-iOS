@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8CD01894-F26F-4395-A7DD-1DF14E72F128"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OC&#x5bf9;&#x8c61;&#x7684;&#x672c;&#x8d28;/main.m"

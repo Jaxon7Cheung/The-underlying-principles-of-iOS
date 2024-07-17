@@ -195,6 +195,8 @@ int main(int argc, const char * argv[]) {
         NSLog(@"person2 = %@ ** %p ** %p", person2, person2, &person2);
         
         [Person allocWithZone: nil];
+        
+        testAllocSize();
 
     }
     return 0;

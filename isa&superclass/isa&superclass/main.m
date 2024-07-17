@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
+#import "XYPerson.h"
 
 @interface Person : NSObject <NSCopying> {
     @public
@@ -66,7 +67,7 @@
 @end
 //  当Student的instance对象要调用Person的对象方法时，会先通过isa找到Student的class，然后通过superclass找到Person的class，最后找到对象方法的实现进行调用
 
-void testIntance(void) {
+void testInstance(void) {
     Person* person = [[Person alloc] init];
     person->_age = 21;
     [person personInstanceMethod];
@@ -136,6 +137,40 @@ int main(int argc, const char * argv[]) {
         Class personClass = [Person class];
         
         //  要在 OC 文件中导入 Cpp 文件，将.m后缀改成.mm
+        
+//        Person* person = [Person alloc];
+//        NSLog(@"%@", person);
+//        Student* student = [Student alloc];
+//        NSLog(@"%@", student);
+  
+        //  类对象的继承链
+//        Class tClass = [Student class];
+//        Class pClass = class_getSuperclass(tClass);
+//        Class nClass = class_getSuperclass(pClass);
+//        Class rClass = class_getSuperclass(nClass);
+//        NSLog(@"\n tClass-%@ \n pClass-%@ \n nClass-%@ \n rClass-%@ \n", tClass, pClass, nClass, rClass);
+        
+        //  元类对象的继承链
+//        Student * student = [Student alloc];
+//        Class tClass = object_getClass(student);
+//        Class mtClass = object_getClass(tClass);
+//        Class mtSuperClass = class_getSuperclass(mtClass);
+//        NSLog(@"\n student %p 实例对象 -- %p 类 -- %p 元类 -- %p 元类父类", student, tClass, mtClass, mtSuperClass);
+//
+//        Person * person = [Person alloc];
+//        Class pClass = object_getClass(person);
+//        Class mpClass = object_getClass(pClass);
+//        Class mpSuperClass = class_getSuperclass(mpClass);
+//        NSLog(@"\n person %p 实例对象 -- %p 类 -- %p 元类 -- %p 元类父类", person, pClass, mpClass, mpSuperClass);
+//
+//        NSObject * obj = [NSObject alloc];
+//        Class objClass = object_getClass(obj);
+//        Class mobjClass = object_getClass(objClass);
+//        Class mobjSuperClass = class_getSuperclass(mobjClass);
+//        NSLog(@"\n NSObject %p 实例对象 -- %p 类 -- %p 元类 -- %p 元类父类 == %p NSObject类对象", obj, objClass, mobjClass, mobjSuperClass, [NSObject class]);
+        
+        XYPerson* person = [[XYPerson alloc] init];
+        [person class];
         
     }
     return 0;

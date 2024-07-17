@@ -29,8 +29,8 @@ int main(int argc, const char * argv[]) {
         Class objectClass3 = [NSObject class];
         Class objectClass4 = object_getClass(obj1);
         Class objectClass5 = object_getClass(obj2);
-        //  上面都是NSobject的 class 对象
-        //  他们是同一个对象，即这些指针指向的是同一块内存，个类在内存中有且只有一个 class 对象
+        //  上面都是NSObject的 class 对象
+        //  他们是同一个对象，即这些指针指向的是同一块内存，每个类在内存中有且只有一个 class 对象
         NSLog(@"%p %p %p %p %p", objectClass1, objectClass2, objectClass3, objectClass4, objectClass5);
         
         /*
@@ -46,7 +46,7 @@ int main(int argc, const char * argv[]) {
         //  每个类只有一个元类对象
         Class objectMetaClass = object_getClass(object_getClass(obj1));
         Class objectMetaClass2 = [[NSObject class] class];  //  class不管调多少次返回的一直是类对象
-        NSLog(@"%p %p %d", objectMetaClass, objectMetaClass2, class_isMetaClass(objectMetaClass));
+        NSLog(@"%p %p %d %d", objectMetaClass, objectMetaClass2, class_isMetaClass(objectMetaClass), class_isMetaClass(objectMetaClass2));
         //  内存结构同类对象（struct objc_class* Class），只是包含的信息不一样
         /*
          元类对象在内存中存储的信息主要包括：
