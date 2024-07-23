@@ -48,10 +48,10 @@ struct Struct3 {
 ----------
    0000001
  */
-//BOOL isTaggedPointer(id pointer) {
-//    return (long)(__bridge void *)pointer & (long)1;
-////    return (long)pointer & (long)1;
-//}
+BOOL isTaggedPointer(id pointer) {
+    return (long)(__bridge void *)pointer & (long)1;
+//    return (long)pointer & (long)1;
+}
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -75,21 +75,21 @@ int main(int argc, const char * argv[]) {
 //        NSNumber *number4 = @(d);   // 0xb000000000000013
 //        NSNumber *number5 = @(e);   // 0xb000000000000014
 //        NSNumber *number6 = @(f);   // 0xb000000000000015
-////        NSNumber* number1 = [NSNumber numberWithInt: 1];
-////        NSNumber* number2 = [NSNumber numberWithInt: 2];
-////        NSNumber* number3 = [NSNumber numberWithInt: 3];
-//////        NSNumber* number4 = [NSNumber numberWithInt: 4];
-//////        NSNumber* number5 = [NSNumber numberWithInt: 5];
-//////        NSNumber* number6 = [NSNumber numberWithInt: 6];
-////        NSNumber* number4 = @4;
-////        NSNumber* number5 = @5;
-////        NSNumber* number6 = @6;
-////        NSNumber* numberF = [NSNumber numberWithUnsignedLongLong: @(0xFFFFFFFFFFFFFFFF)];
+        NSNumber* number1 = [NSNumber numberWithInt: 1];
+        NSNumber* number2 = [NSNumber numberWithInt: 2];
+        NSNumber* number3 = [NSNumber numberWithInt: 3];
+//        NSNumber* number4 = [NSNumber numberWithInt: 4];
+//        NSNumber* number5 = [NSNumber numberWithInt: 5];
+//        NSNumber* number6 = [NSNumber numberWithInt: 6];
+        NSNumber* number4 = @4;
+        NSNumber* number5 = @5;
+        NSNumber* number6 = @6;
+        NSNumber* numberF = [NSNumber numberWithUnsignedLongLong: @(0xFFFFFFFFFFFFFFFF)];
 //        NSNumber* numberF = @(0xFFFFFFFFFFFFFFFF);
-//        NSLog(@"%p %p %p %p %p %p %p", number1, number2, number3, number4, number5, number6, numberF);
-////        NSLog(@"%d %d %d %d %d %d %d", isTaggedPointer(number1), isTaggedPointer(number2), isTaggedPointer(number3), isTaggedPointer(number4), isTaggedPointer(number5), isTaggedPointer(number6), isTaggedPointer(numberF));
+        NSLog(@"%p %p %p %p %p %p %p", number1, number2, number3, number4, number5, number6, numberF);
+        NSLog(@"%d %d %d %d %d %d %d", isTaggedPointer(number1), isTaggedPointer(number2), isTaggedPointer(number3), isTaggedPointer(number4), isTaggedPointer(number5), isTaggedPointer(number6), isTaggedPointer(numberF));
 //        NSLog(@"111 %zd", malloc_size((__bridge const void *)(numberF)));
-//        NSLog(@"%@ %@ %@ %@ %@ %@ %@", [number1 class], [number2 class], [number3 class], [number4 class], [number5 class], [number6 class], [numberF class]);
+        NSLog(@"%@ %@ %@ %@ %@ %@ %@", [number1 class], [number2 class], [number3 class], [number4 class], [number5 class], [number6 class], [numberF class]);
         
         
 //        NSString* string = nil;
