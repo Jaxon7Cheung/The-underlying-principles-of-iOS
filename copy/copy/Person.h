@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Person : NSObject
 
 // copy关键字
-@property (nonatomic, strong)NSString* text;
+@property (nonatomic, copy)NSString* text;
 //@property (nonatomic, copy)NSArray* data;
-@property (nonatomic, copy)NSMutableArray* data;
+@property (nonatomic, strong)NSMutableArray* data;
 
 @end
 

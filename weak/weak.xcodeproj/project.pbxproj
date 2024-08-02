@@ -14,6 +14,7 @@
 		A2BEB7E42C5B5A2300097F4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2BEB7E32C5B5A2300097F4E /* Assets.xcassets */; };
 		A2BEB7E72C5B5A2300097F4E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A2BEB7E62C5B5A2300097F4E /* Base */; };
 		A2BEB7EA2C5B5A2300097F4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BEB7E92C5B5A2300097F4E /* main.m */; };
+		A2BEB7F22C5B5A4400097F4E /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BEB7F12C5B5A4400097F4E /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		A2BEB7E62C5B5A2300097F4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2BEB7E82C5B5A2300097F4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2BEB7E92C5B5A2300097F4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A2BEB7F02C5B5A4400097F4E /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		A2BEB7F12C5B5A4400097F4E /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				A2BEB7DB2C5B5A2000097F4E /* SceneDelegate.m */,
 				A2BEB7DD2C5B5A2000097F4E /* ViewController.h */,
 				A2BEB7DE2C5B5A2000097F4E /* ViewController.m */,
+				A2BEB7F02C5B5A4400097F4E /* Person.h */,
+				A2BEB7F12C5B5A4400097F4E /* Person.m */,
 				A2BEB7E02C5B5A2000097F4E /* Main.storyboard */,
 				A2BEB7E32C5B5A2300097F4E /* Assets.xcassets */,
 				A2BEB7E52C5B5A2300097F4E /* LaunchScreen.storyboard */,
@@ -148,6 +153,7 @@
 			files = (
 				A2BEB7DF2C5B5A2000097F4E /* ViewController.m in Sources */,
 				A2BEB7D92C5B5A2000097F4E /* AppDelegate.m in Sources */,
+				A2BEB7F22C5B5A4400097F4E /* Person.m in Sources */,
 				A2BEB7EA2C5B5A2300097F4E /* main.m in Sources */,
 				A2BEB7DC2C5B5A2000097F4E /* SceneDelegate.m in Sources */,
 			);

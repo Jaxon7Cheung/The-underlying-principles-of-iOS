@@ -18,16 +18,17 @@
  */
 
 void test(void) {
-    NSString* str1 = [NSString stringWithFormat: @"test"];
-    NSString* str2 = [str1 copy];  // 返回NSString
+    NSString* str1 = [NSString stringWithFormat: @"testttttttttttttttttttttttt"];
+    NSMutableString* str2 = [str1 copy];  // 返回NSString
     NSMutableString* str3 = [str1 mutableCopy];  // 返回NSMutableString
     
     NSLog(@"%@ %@ %@", [str1 class], [str2 class], [str3 class]);
     [str3 appendString: @"123"];
     
 //        Thread 1: "-[NSTaggedPointerString appendString:]: unrecognized selector sent to instance 0xa7173f739e6407b8"
-    //NSTaggedPointerString没有appendString这个方法
-//        [str2 appendString: @"123"];
+    // NSTaggedPointerString没有appendString这个方法
+    // Thread 1: "Attempt to mutate immutable object with appendString:"
+    [str2 appendString: @"123"];
     
     // MRC下应这样写，才不会出现内存泄漏 如果是alloc初始化的还需调用autorelease
 //    [str3 release];[str2 release];[str1 release];
@@ -67,14 +68,14 @@ void arrayTest(void) {
     NSArray* array1 = [[NSArray alloc] initWithObjects: @"a", @"b", nil];
     NSArray* array2 = [array1 copy];  // retain
     NSMutableArray* array3 = [array1 mutableCopy];
-    NSLog(@"%p %p %p", array1, array2, array3);
+    NSLog(@"%@ - %p\n%@ - %p\n%@ - %p", array1, array1, array2, array2, array3, array3);
     [array1 release];[array2 release];[array3 release];
     
 //    NSMutableArray* array = [NSMutableArray arrayWithObjects: @"a", @"b", nil];
-    NSMutableArray* array = [[NSMutableArray alloc] initWithObjects: @"a", @"b", nil];
+    NSMutableArray* array = [[NSMutableArray alloc] initWithObjects: @"a", @"b", @"c", nil];
     NSArray* arraya = [array copy];
     NSMutableArray* arrayb = [array mutableCopy];
-    NSLog(@"%p %p %p", array, arraya, arrayb);
+    NSLog(@"%@ - %p\n%@ - %p\n%@ - %p", array, array, arraya, arraya, arrayb, arrayb);
     [array release];[arraya release];[arrayb release];
 }
 
@@ -107,9 +108,9 @@ void strongStringTest(void) {
     Person *person = [[Person alloc] init];
     NSMutableString * str1 = [NSMutableString stringWithString:@"dddddddddddd"];
     person.text = str1;
-    [str1 appendString:@"33"];
+    [str1 appendString: @"33"];
     
-    NSLog(@"%p %p", str1, person.text);
+    NSLog(@"%@ --- %p, %@ --- %p", str1, str1, person.text, person.text);
     
     //copy关键字，保证原不可变对象不会被更改
     // 传入不可变对象copy为浅拷贝，指向原对象，但本身也不可变
@@ -134,6 +135,18 @@ void selfDefineClass(void) {
     [fellow2 release];
 }
 
+void strongAndCopyTest(void) {
+    Person* person = [[Person alloc] init];
+    
+    NSMutableArray* mutableArray = [NSMutableArray array];
+    person.data = mutableArray;
+    
+    [person.data addObject: @"Jack"];
+    [mutableArray addObject: @"Rose"];
+    
+    NSLog(@"%@ %p", person.data, person.data);
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // 这几类Foundation框架对象都有拷贝（mutableCopy）功能
@@ -143,11 +156,7 @@ int main(int argc, const char * argv[]) {
 //        NSData
 //        NSSet
         
-        
-        
-        
-        
-        
+        arrayTest();
         
         
         
