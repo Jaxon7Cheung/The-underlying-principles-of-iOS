@@ -9,11 +9,15 @@
 
 @implementation Person
 
-- (void)dealloc
-{
-    NSLog(@"%s", __func__);
-    
-//    [super dealloc];
+void test(void) {
+    NSLog(@"person -- test");
 }
+
+//- (void)dealloc
+//{
+//    NSLog(@"%s", __func__);
+//    
+//    [super dealloc];
+//}
 
 @end
