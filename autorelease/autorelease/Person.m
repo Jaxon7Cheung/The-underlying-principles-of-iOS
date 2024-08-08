@@ -13,11 +13,11 @@ void test(void) {
     NSLog(@"person -- test");
 }
 
-//- (void)dealloc
-//{
-//    NSLog(@"%s", __func__);
-//    
+- (void)dealloc
+{
+    NSLog(@"%s", __func__);
+    
 //    [super dealloc];
-//}
+}
 
 @end

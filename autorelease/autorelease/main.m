@@ -8,104 +8,104 @@
 #import <Foundation/Foundation.h>
 #import "Person.h"
 
-// 声明系统内部的函数
-extern void test(void);
-extern void _objc_autoreleasePoolPrint(void);
-
-void test1(void) {
-    @autoreleasepool {
-    
-//        Person* person = [[Person alloc] init];
-//        [person release];
-        
-        
-        NSLog(@"111");
-        @autoreleasepool {
-            Person* person = [[[Person alloc] init] autorelease];
-//            Person* person = [[Person alloc] init]; // ARC下自动调用autorelease
-        }
-        NSLog(@"222");
-        
-        
-        Person* person = [[[Person alloc] init] autorelease];
-        
-    } // 猜测使用autorelease会在 @autoreleasepool花括号结束时调用release
-}
-
-void test2(void) {
-    @autoreleasepool {
-//        atautoreleasepoolobj = objc_autoreleasePoolPush();
-        // atautoreleasepoolobj = 0x1038
-        
-        
-        
-        for (int i = 0; i < 1000; ++i) {
-            Person* person = [[[Person alloc] init] autorelease];
-        } // 8000字节，至少需要两个page
-        
-//        objc_autoreleasePoolPop(atautoreleasepoolobj);
-    }
-    
-    // id* next永远都指向下一个能存放autorelease地址的地方
-    
-}
-
-void test3(void) {
-    @autoreleasepool { // r1 = push
-//        test();
-//        _objc_autoreleasePoolPrint();
-        
-        Person* person1 = [[[Person alloc] init] autorelease];
-        Person* person2 = [[[Person alloc] init] autorelease];
-//        _objc_autoreleasePoolPrint();
-        
-        @autoreleasepool { // r2 = push()
-            Person* person3 = [[[Person alloc] init] autorelease];
-            
-//            _objc_autoreleasePoolPrint();
-            
-            @autoreleasepool { // r3 = push()
-                Person* person4 = [[[Person alloc] init] autorelease];
-                
+//// 声明系统内部的函数
+//extern void test(void);
+//extern void _objc_autoreleasePoolPrint(void);
+//
+//void test1(void) {
+//    @autoreleasepool {
+//    
+////        Person* person = [[Person alloc] init];
+////        [person release];
+//        
+//        
+//        NSLog(@"111");
+//        @autoreleasepool {
+//            Person* person = [[[Person alloc] init] autorelease];
+////            Person* person = [[Person alloc] init]; // ARC下自动调用autorelease
+//        }
+//        NSLog(@"222");
+//        
+//        
+//        Person* person = [[[Person alloc] init] autorelease];
+//        
+//    } // 猜测使用autorelease会在 @autoreleasepool花括号结束时调用release
+//}
+//
+//void test2(void) {
+//    @autoreleasepool {
+////        atautoreleasepoolobj = objc_autoreleasePoolPush();
+//        // atautoreleasepoolobj = 0x1038
+//        
+//        
+//        
+//        for (int i = 0; i < 1000; ++i) {
+//            Person* person = [[[Person alloc] init] autorelease];
+//        } // 8000字节，至少需要两个page
+//        
+////        objc_autoreleasePoolPop(atautoreleasepoolobj);
+//    }
+//    
+//    // id* next永远都指向下一个能存放autorelease地址的地方
+//    
+//}
+//
+//void test3(void) {
+//    @autoreleasepool { // r1 = push
+////        test();
+////        _objc_autoreleasePoolPrint();
+//        
+//        Person* person1 = [[[Person alloc] init] autorelease];
+//        Person* person2 = [[[Person alloc] init] autorelease];
+////        _objc_autoreleasePoolPrint();
+//        
+//        @autoreleasepool { // r2 = push()
+//            Person* person3 = [[[Person alloc] init] autorelease];
+//            
+////            _objc_autoreleasePoolPrint();
+//            
+//            @autoreleasepool { // r3 = push()
+//                Person* person4 = [[[Person alloc] init] autorelease];
+//                
 //                _objc_autoreleasePoolPrint();
-            } // pop(r3)
-//            _objc_autoreleasePoolPrint();
-        } // pop(r2)
-//        _objc_autoreleasePoolPrint();
-    } // pop(r1)
-//    _objc_autoreleasePoolPrint();
-}
-
-void test4(void) {
-    @autoreleasepool {
-        Person* person1 = [[[Person alloc] init] autorelease];
-        Person* person2 = [[[Person alloc] init] autorelease];
-        
-        @autoreleasepool {
-            
-            for (int i = 0; i < 600; ++i) {
-                Person* person3 = [[[Person alloc] init] autorelease];
-            }
-            @autoreleasepool {
-                Person* person4 = [[[Person alloc] init] autorelease];
-                
-                // PAGE(full)(cold)指该page已经满了
-                // PAGE(hot)指当前正在使用的page
-                _objc_autoreleasePoolPrint();
-            }
-        }
-    }
-    // 可通过以下私有函数来查看自动释放池的情况，虽然私有，但只要声明一下，就可使用
-    // extern void _objc_autoreleasePoolPrint(void);
-}
+//            } // pop(r3)
+////            _objc_autoreleasePoolPrint();
+//        } // pop(r2)
+////        _objc_autoreleasePoolPrint();
+//    } // pop(r1)
+////    _objc_autoreleasePoolPrint();
+//}
+//
+//void test4(void) {
+//    @autoreleasepool {
+//        Person* person1 = [[[Person alloc] init] autorelease];
+//        Person* person2 = [[[Person alloc] init] autorelease];
+//        
+//        @autoreleasepool {
+//            
+//            for (int i = 0; i < 600; ++i) {
+//                Person* person3 = [[[Person alloc] init] autorelease];
+//            }
+//            @autoreleasepool {
+//                Person* person4 = [[[Person alloc] init] autorelease];
+//                
+//                // PAGE(full)(cold)指该page已经满了
+//                // PAGE(hot)指当前正在使用的page
+//                _objc_autoreleasePoolPrint();
+//            }
+//        }
+//    }
+//    // 可通过以下私有函数来查看自动释放池的情况，虽然私有，但只要声明一下，就可使用
+//    // extern void _objc_autoreleasePoolPrint(void);
+//}
 
 int main(int argc, const char * argv[]) {
     
     @autoreleasepool {
-        __autoreleasing Person* person = [[Person alloc] init];
-        
+//        __autoreleasing Person* person = [[Person alloc] init];
     }
     
+    Person* person = [[Person alloc] init];
     
     return 0;
 }

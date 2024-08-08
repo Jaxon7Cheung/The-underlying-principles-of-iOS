@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A2BEB8582C6271EB00097F4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BEB8572C6271EB00097F4E /* main.m */; };
-		A2BEB8602C62720F00097F4E /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BEB85F2C62720F00097F4E /* Person.m */; };
+		A2BEB86E2C6482D300097F4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BEB86D2C6482D300097F4E /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A2BEB8522C6271EB00097F4E /* CopyFiles */ = {
+		A2BEB8682C6482D300097F4E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,14 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A2BEB8542C6271EB00097F4E /* autorelease */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = autorelease; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2BEB8572C6271EB00097F4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A2BEB85E2C62720F00097F4E /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		A2BEB85F2C62720F00097F4E /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		A2BEB86A2C6482D300097F4E /* Block底层 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Block底层"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2BEB86D2C6482D300097F4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A2BEB8512C6271EB00097F4E /* Frameworks */ = {
+		A2BEB8672C6482D300097F4E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,67 +38,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A2BEB84B2C6271EB00097F4E = {
+		A2BEB8612C6482D300097F4E = {
 			isa = PBXGroup;
 			children = (
-				A2BEB8562C6271EB00097F4E /* autorelease */,
-				A2BEB8552C6271EB00097F4E /* Products */,
+				A2BEB86C2C6482D300097F4E /* Block底层 */,
+				A2BEB86B2C6482D300097F4E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A2BEB8552C6271EB00097F4E /* Products */ = {
+		A2BEB86B2C6482D300097F4E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A2BEB8542C6271EB00097F4E /* autorelease */,
+				A2BEB86A2C6482D300097F4E /* Block底层 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A2BEB8562C6271EB00097F4E /* autorelease */ = {
+		A2BEB86C2C6482D300097F4E /* Block底层 */ = {
 			isa = PBXGroup;
 			children = (
-				A2BEB8572C6271EB00097F4E /* main.m */,
-				A2BEB85E2C62720F00097F4E /* Person.h */,
-				A2BEB85F2C62720F00097F4E /* Person.m */,
+				A2BEB86D2C6482D300097F4E /* main.m */,
 			);
-			path = autorelease;
+			path = "Block底层";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A2BEB8532C6271EB00097F4E /* autorelease */ = {
+		A2BEB8692C6482D300097F4E /* Block底层 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A2BEB85B2C6271EB00097F4E /* Build configuration list for PBXNativeTarget "autorelease" */;
+			buildConfigurationList = A2BEB8712C6482D300097F4E /* Build configuration list for PBXNativeTarget "Block底层" */;
 			buildPhases = (
-				A2BEB8502C6271EB00097F4E /* Sources */,
-				A2BEB8512C6271EB00097F4E /* Frameworks */,
-				A2BEB8522C6271EB00097F4E /* CopyFiles */,
+				A2BEB8662C6482D300097F4E /* Sources */,
+				A2BEB8672C6482D300097F4E /* Frameworks */,
+				A2BEB8682C6482D300097F4E /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = autorelease;
-			productName = autorelease;
-			productReference = A2BEB8542C6271EB00097F4E /* autorelease */;
+			name = "Block底层";
+			productName = "Block底层";
+			productReference = A2BEB86A2C6482D300097F4E /* Block底层 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A2BEB84C2C6271EB00097F4E /* Project object */ = {
+		A2BEB8622C6482D300097F4E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					A2BEB8532C6271EB00097F4E = {
+					A2BEB8692C6482D300097F4E = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
-			buildConfigurationList = A2BEB84F2C6271EB00097F4E /* Build configuration list for PBXProject "autorelease" */;
+			buildConfigurationList = A2BEB8652C6482D300097F4E /* Build configuration list for PBXProject "Block底层" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -109,30 +104,29 @@
 				en,
 				Base,
 			);
-			mainGroup = A2BEB84B2C6271EB00097F4E;
-			productRefGroup = A2BEB8552C6271EB00097F4E /* Products */;
+			mainGroup = A2BEB8612C6482D300097F4E;
+			productRefGroup = A2BEB86B2C6482D300097F4E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A2BEB8532C6271EB00097F4E /* autorelease */,
+				A2BEB8692C6482D300097F4E /* Block底层 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A2BEB8502C6271EB00097F4E /* Sources */ = {
+		A2BEB8662C6482D300097F4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2BEB8602C62720F00097F4E /* Person.m in Sources */,
-				A2BEB8582C6271EB00097F4E /* main.m in Sources */,
+				A2BEB86E2C6482D300097F4E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		A2BEB8592C6271EB00097F4E /* Debug */ = {
+		A2BEB86F2C6482D300097F4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -193,7 +187,7 @@
 			};
 			name = Debug;
 		};
-		A2BEB85A2C6271EB00097F4E /* Release */ = {
+		A2BEB8702C6482D300097F4E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -247,19 +241,17 @@
 			};
 			name = Release;
 		};
-		A2BEB85C2C6271EB00097F4E /* Debug */ = {
+		A2BEB8722C6482D300097F4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		A2BEB85D2C6271EB00097F4E /* Release */ = {
+		A2BEB8732C6482D300097F4E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -268,25 +260,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A2BEB84F2C6271EB00097F4E /* Build configuration list for PBXProject "autorelease" */ = {
+		A2BEB8652C6482D300097F4E /* Build configuration list for PBXProject "Block底层" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A2BEB8592C6271EB00097F4E /* Debug */,
-				A2BEB85A2C6271EB00097F4E /* Release */,
+				A2BEB86F2C6482D300097F4E /* Debug */,
+				A2BEB8702C6482D300097F4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A2BEB85B2C6271EB00097F4E /* Build configuration list for PBXNativeTarget "autorelease" */ = {
+		A2BEB8712C6482D300097F4E /* Build configuration list for PBXNativeTarget "Block底层" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A2BEB85C2C6271EB00097F4E /* Debug */,
-				A2BEB85D2C6271EB00097F4E /* Release */,
+				A2BEB8722C6482D300097F4E /* Debug */,
+				A2BEB8732C6482D300097F4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A2BEB84C2C6271EB00097F4E /* Project object */;
+	rootObject = A2BEB8622C6482D300097F4E /* Project object */;
 }
