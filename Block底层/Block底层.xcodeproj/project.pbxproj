@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A2BEB86E2C6482D300097F4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BEB86D2C6482D300097F4E /* main.m */; };
+		A2BEB86E2C6482D300097F4E /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2BEB86D2C6482D300097F4E /* main.mm */; };
+		A2BEB8762C64979E00097F4E /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BEB8752C64979E00097F4E /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +25,10 @@
 
 /* Begin PBXFileReference section */
 		A2BEB86A2C6482D300097F4E /* Block底层 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Block底层"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2BEB86D2C6482D300097F4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A2BEB86D2C6482D300097F4E /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		A2BEB8742C64979E00097F4E /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		A2BEB8752C64979E00097F4E /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		A2BEB8772C64A47700097F4E /* mainBlock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mainBlock.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +61,10 @@
 		A2BEB86C2C6482D300097F4E /* Block底层 */ = {
 			isa = PBXGroup;
 			children = (
-				A2BEB86D2C6482D300097F4E /* main.m */,
+				A2BEB86D2C6482D300097F4E /* main.mm */,
+				A2BEB8772C64A47700097F4E /* mainBlock.cpp */,
+				A2BEB8742C64979E00097F4E /* Person.h */,
+				A2BEB8752C64979E00097F4E /* Person.m */,
 			);
 			path = "Block底层";
 			sourceTree = "<group>";
@@ -119,7 +126,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2BEB86E2C6482D300097F4E /* main.m in Sources */,
+				A2BEB8762C64979E00097F4E /* Person.m in Sources */,
+				A2BEB86E2C6482D300097F4E /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
