@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy)NSString* name;
 
+- (void)testSelf;
 - (instancetype)initWithName:(NSString *)name;
 
 @end

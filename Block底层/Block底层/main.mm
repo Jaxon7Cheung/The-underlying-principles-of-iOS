@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Person.h"
 
 struct __block_impl {
     void* isa;
@@ -92,36 +93,70 @@ void baseBlock(void) {
     block();
 }
 
-int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        
-        // auto：自动变量，离开作用域就自动销毁，只存在于局部变量
-        /*auto*/ int age = 10;
-        
+void captureVar(void) {
+    // auto：自动变量，离开作用域就自动销毁，只存在于局部变量
+    /*auto*/ int age = 10;
+    
 //        auto int a = 20;
 //        static int b = 30;
 //        register int c = 30;
-        
-        static int height = 175;
-        
-        void (^block)(void) = ^{
-            // age的值捕获进来（capture））
-            NSLog(@"age is %d, height is %d", age, height);
-        };
-        
-        age = 20;
-        height = 180;
-        
-        // auto值传递，static指针传递：只要是局部变量，Block要访问局部变量，都会将其捕获进去
-        // 全局变量，不传递（不会被捕获到Block内部），直接访问
-        block(); NSLog(@"%d %d", age, height);
-        
-        
+    
+    static int height = 175;
+    
+    void (^block)(void) = ^{
+        // age的值捕获进来（capture））
+        NSLog(@"age is %d, height is %d", age, height);
+    };
+    
+    age = 20;
+    height = 180;
+    
+    // auto值传递，static指针传递：只要是局部变量，Block要访问局部变量，都会将其捕获进去
+    // 全局变量，不传递（不会被捕获到Block内部），直接访问
+    block(); NSLog(@"%d %d", age, height);
+    
+    
 //        void (^block)(int, int) = ^(int a, int b) {
 //            NSLog(@"Hello World! -- %d, %d", a, b);
 //        };
 //        block(2, 21);
-       
+}
+
+void (^block)(void);
+void test(void) {
+    
+    auto int age = 10;
+    
+    static int height = 175;
+    
+    block = ^{
+        NSLog(@"age is %d, height is %d", age, height);
+    };
+    
+    age = 20;
+    height = 180;
+}
+
+int age_ = 10;
+static int height_ = 175;
+void noncaptureVar(void) {
+    //        test();
+    //        block();
+            
+            void (^block)(void) = ^{
+                NSLog(@"age_ is %d, height_ is %d", age_, height_);
+            };
+
+            age_ = 20;
+            height_ = 180;
+            
+            block();
+}
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        Person* person = [Person new];
+        [person testSelf];
     }
     return 0;
 }
