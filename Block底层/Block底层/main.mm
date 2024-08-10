@@ -153,10 +153,111 @@ void noncaptureVar(void) {
             block();
 }
 
+void blockIsOC(void) {
+    void (^block)(void) = ^{
+        NSLog(@"Hello!");
+    };
+    
+    NSLog(@"%@ %@", block, [block class]);
+    NSLog(@"%@", [[block class] superclass]);
+    NSLog(@"%@", [[[block class] superclass] superclass]);
+    /*
+     __NSGlobalBlock__
+     NSBlock
+     NSObject
+     */
+}
+
+void blockThreeCat(void) {
+    // Global：没有访问auto变量，跟static变量无关
+    void (^block1)(void) = ^{
+//            NSLog(@"Hello");
+    };
+    // 其实Global不常用，既然不访问变量，那么将代码块封装成函数一行直接调用才显得更为简洁
+    
+    // Stack：访问了auto变量
+    int age = 21;
+    void (^block2)(void) = ^{
+        NSLog(@"Hello - %d", age);
+    };
+    // ARC下打印Malloc？
+    // MRC下确实是Stack
+    
+    NSLog(@"%@ %@ %@", [block1 class], [block2 class], [^{
+        NSLog(@"%d", age);
+    } class]);
+    
+    // 编译完成后isa指向是_NSConcreteStackBlock、_NSConcreteMallocBlock、_NSConcreteGlobalBlock
+    // 首先肯定以运行时的结果为准，Block确实有三种类型，可能会通过Runtime动态修改类型
+}
+
+void (^blockk)(void);
+void testK(void) {
+    int age = 21;
+    blockk = ^{
+        NSLog(@"block --- %d", age);
+    };
+}
+// 函数调用栈：要调用一个函数的时候，就会指定一块栈区空间给这个函数用
+// 一旦函数调用完毕后，栈区的这块空间就会回收，变成垃圾数据，会被其他数据覆盖
+
+int age = 10;
+void memoryZone(void) {
+    int a = 10;
+    
+    NSLog(@"数据段：age %p", &age);
+    NSLog(@"栈：a %p", &a);
+    NSLog(@"堆：obj %p", [[NSObject alloc] init]);
+    NSLog(@"class %p", [Person class]); // 地址跟数据段比较接近
+}
+
+typedef void(^BBlock)(void);
+
+BBlock myBlock(void) {
+    int age = 21;
+    return ^{
+        NSLog(@"----------%d", age);
+    };
+}
+// 如果是在MRC的环境下，这样写就很危险
+// 由于Block在栈区，所以函数调用完毕后Block内存就被销毁了
+// 再去调用它就很危险，编译器也会提示报错
+// 所以再ARC环境下，编译器会自动对返回的Block进行copy操作，将Block存到堆上
+//BBlock myBlock(void) {
+//    return [^{
+//        NSLog(@"----------");
+//    } copy];
+//}
+//        BBlock bblock = myBlock();
+//        bblock();
+//        NSLog(@"%@", [bblock class]);
+
+void copyBlock(void) {
+    int age = 21;
+    /*__strong*/ BBlock bblock = ^{
+        NSLog(@"--------%d", age);
+    };
+    NSLog(@"%@", [bblock class]);
+    
+    NSLog(@"%@", [^{
+        NSLog(@"--------%d", age);
+    } class]);
+    
+    NSArray* array = @[@"one", @2, @{@"seven" : @7}];
+    [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"%@ --- %lu", obj, (unsigned long)idx);
+    }];
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        Person* person = [Person new];
-        [person testSelf];
+//        Person* person = [Person new];
+//        [person testSelf];
+        
+//        memoryZone();
+//        blockThreeCat();
+        
+        
     }
     return 0;
 }
