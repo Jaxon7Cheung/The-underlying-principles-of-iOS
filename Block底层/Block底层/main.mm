@@ -257,6 +257,23 @@ int main(int argc, const char * argv[]) {
 //        memoryZone();
 //        blockThreeCat();
         
+        BBlock bblock;
+        
+        {
+            __strong Person* person = [[Person alloc] init];
+            person.age = 21;
+            bblock = ^{
+                NSLog(@"-%d-", person.age);
+            };
+        }
+        
+        NSLog(@"--------------");
+        
+//        BBlock bblock = ^{
+//            NSLog(@"-%d-", person.age);
+//        };
+//        bblock();
+        // 只要Block存在栈上，无论访问外部变量是用强指针还是弱指针，都不会对外部变量产生强引用
         
     }
     return 0;
