@@ -249,31 +249,97 @@ void copyBlock(void) {
     }];
 }
 
+void strongAndWeakBlock(void) {
+    //        Person* person = [Person new];
+    //        [person testSelf];
+            
+    //        memoryZone();
+    //        blockThreeCat();
+            
+            BBlock bblock;
+            
+            {
+                __strong Person* person = [[Person alloc] init];
+                person.age = 21;
+                bblock = ^{
+                    NSLog(@"-%d-", person.age);
+                };
+            }
+            
+            NSLog(@"--------------");
+            
+    //        BBlock bblock = ^{
+    //            NSLog(@"-%d-", person.age);
+    //        };
+    //        bblock();
+            // 只要Block存在栈上，无论访问外部变量是用强指针还是弱指针，都不会对外部变量产生强引用
+}
+
+int height;
+void __blockTest(void) {
+    //        int age = 21;
+//            static int age = 21;
+            __block int age = 21;
+            NSMutableArray* array = [NSMutableArray array];
+            
+            BBlock block = ^{
+                // auto：从底层可看出在这里修改变量的值，实际上是通过改变__main_block_fun_0函数里的局部变量达到改变main函数里的局部变量，这是两个独立的函数，显然不可能
+    //            age = 20;
+                
+                // static：底层用指针访问，Block内部引用的是变量的地址值，函数间会传递变量的地址，修改的就是同一块内存
+                // 但不好的是`age属性`会一直存放在内存中不销毁，造成多余的内存占用，而且会改变`age属性`的性质，不再是一个`auto变量`了
+    //            age = 20;
+                
+                // 全局变量当然随时可以修改
+    //            height = 175;
+                
+                // 使用__block修饰auto变量就可在块中修改
+                age = 20;
+                
+                NSLog(@"%d", age);
+                
+                [array addObject: @"Hhh"];
+                
+            };
+            
+            block();
+    
+    
+//    __block __weak int age = 21;
+//    
+//    NSObject* object = [[NSObject alloc] init];
+//    __weak NSObject* weakObject = object;
+//    
+//    BBlock block = ^{
+//        NSLog(@"%d", age);
+//        NSLog(@"%p", weakObject);
+//    };
+//    block();
+}
+
+// 在MRC环境下即使用__block修饰，对于结构体对象的成员变量，__block内部只会对auto变量进行弱引用，无论加不加__weak，block还没有释放，__block修饰的变量就已经释放了，这点和在ARC环境下不同
+void __blockMRCTest(void) {
+//        __block Person* person = [Person new];
+        __block Person* person = [Person new];
+        
+        BBlock block = ^{
+            NSLog(@"%@", person);
+        };
+    
+    // MRC下，不加__block的话，尽管调用release，那它也是强引用retain不会释放
+//    [person release];
+    
+    block();
+    
+//    [block release];
+}
+
+
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-//        Person* person = [Person new];
-//        [person testSelf];
+
         
-//        memoryZone();
-//        blockThreeCat();
-        
-        BBlock bblock;
-        
-        {
-            __strong Person* person = [[Person alloc] init];
-            person.age = 21;
-            bblock = ^{
-                NSLog(@"-%d-", person.age);
-            };
-        }
-        
-        NSLog(@"--------------");
-        
-//        BBlock bblock = ^{
-//            NSLog(@"-%d-", person.age);
-//        };
-//        bblock();
-        // 只要Block存在栈上，无论访问外部变量是用强指针还是弱指针，都不会对外部变量产生强引用
         
     }
     return 0;
