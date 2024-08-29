@@ -20,6 +20,10 @@
     NSLog(@"%s", __func__);
 }
 
+- (void)other {
+    NSLog(@"%s", __func__);
+}
+
 @end
 
 @interface Person : NSObject
@@ -57,7 +61,7 @@
     if (aSelector == @selector(test)) {
 //        return [[NSObject alloc] init];
         return nil;
-        // 返回nil，就调用以下方法
+        // 返回nil，就不会转发给备援接收者，就调用以下方法
     }
     
     return [super forwardingTargetForSelector: aSelector];
@@ -82,15 +86,27 @@
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
     NSLog(@"%s", __func__);
 //    anInvocation.target = [[Cat alloc] init];
+//    anInvocation.selector = @selector(other);
 //    [anInvocation invoke];
+    
+    // 开发者可以在此方法中自定义任何逻辑
+    
+    // 随便打印个日志
+    NSLog(@"La la land....Do whatever I want....");
     
     // 更改方法调用者
     [anInvocation invokeWithTarget: [[Cat alloc] init]];
     
-    // 拿到参数信息，传递的是地址值
+    // 更改方法调用者forwardingTargetForSelector方法就可以解决
+    // 所以该方法里还可以有以下操作:
     
+    // 拿到参数信息，传递的是地址值
+    int age; // 3个参数：reciever、SEl、age，加了个age参数，字符串编码也要改变
+    [anInvocation getArgument: &age atIndex: 2]; // 返回值为空，通过传递地址获取值
     
     // 拿到返回值信息
+    int returnVal;
+    [anInvocation getReturnValue: &returnVal];
     
 }
 
