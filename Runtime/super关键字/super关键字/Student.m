@@ -51,7 +51,6 @@
 //@implementation NSObject
 //
 //// class方法中谁调用该方法，返回谁的类型
-//// 返回的类型取决于消息接收者的类型
 //
 //- (Class)class {
 //    return object_getClass(self);
