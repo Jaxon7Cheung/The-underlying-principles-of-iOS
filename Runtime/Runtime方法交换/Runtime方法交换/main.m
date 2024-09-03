@@ -72,3 +72,53 @@ int main(int argc, const char * argv[]) {
     }
     return 0;
 }
+
+//void method_exchangeImplementations(Method m1, Method m2)
+//{
+//    if (!m1  ||  !m2) return;
+//
+//    mutex_locker_t lock(runtimeLock);
+//
+//    IMP imp1 = m1->imp(false);
+//    IMP imp2 = m2->imp(false);
+//    SEL sel1 = m1->name();
+//    SEL sel2 = m2->name();
+//
+//    m1->setImp(imp2);
+//    m2->setImp(imp1);
+//
+//
+//    // RR/AWZ updates are slow because class is unknown
+//    // Cache updates are slow because class is unknown
+//    // fixme build list of classes whose Methods are known externally?
+//
+//    flushCaches(nil, __func__, [sel1, sel2, imp1, imp2](Class c){
+//        return c->cache.shouldFlush(sel1, imp1) || c->cache.shouldFlush(sel2, imp2);
+//    });
+//
+//    adjustCustomFlagsForMethodChange(nil, m1);
+//    adjustCustomFlagsForMethodChange(nil, m2);
+//}
+//
+//static void flushCaches(Class cls, const char *func, bool (^predicate)(Class))
+//{
+//    runtimeLock.assertLocked();
+//#if CONFIG_USE_CACHE_LOCK
+//    mutex_locker_t lock(cacheUpdateLock);
+//#endif
+//
+//    const auto handler = ^(Class c) {
+//        if (predicate(c)) {
+//            // 清空数据
+//            c->cache.eraseNolock(func);
+//        }
+//
+//        return true;
+//    };
+//
+//    if (cls) {
+//        foreach_realized_class_and_subclass(cls, handler);
+//    } else {
+//        foreach_realized_class_and_metaclass(handler);
+//    }
+//}
