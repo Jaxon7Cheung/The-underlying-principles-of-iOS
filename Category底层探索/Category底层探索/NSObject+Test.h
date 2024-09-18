@@ -9,9 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSObject (Test)
+@interface NSObject (Test) <NSCopying, NSCoding>
 
-@property (nonatomic, assign)int insNo;
+//@property (nonatomic, assign)int insNo;
 
 - (void)test1;
 - (void)test2;

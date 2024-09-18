@@ -7,14 +7,22 @@
 
 #import "NSObject+Test.h"
 
-@implementation NSObject (Test) <NSCopying, NSCoding>
+@implementation NSObject (Test)
 
 - (void)test1 {
-    NSLog(@"testtesttest111");
+    NSLog(@"%s", __func__);
 }
 
 - (void)test2 {
-    NSLog(@"testtesttest222");
+    NSLog(@"%s", __func__);
+}
+
++ (void)testClassMethod1 {
+    NSLog(@"%s", __func__);
+}
+
++ (void)testClassMethod2 {
+    NSLog(@"%s", __func__);
 }
 
 @end

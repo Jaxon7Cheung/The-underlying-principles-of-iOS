@@ -9,8 +9,8 @@
 
 @implementation Person
 
-- (void)walk {
-    NSLog(@"walkwalkwalk");
+- (void)run {
+    NSLog(@"runrunrun");
 }
 
 @end

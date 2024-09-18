@@ -10,15 +10,19 @@
 @implementation Person (PersonCategory)
 
 - (void)run1Instance {
+    NSLog(@"%s", __func__);
 }
 
 - (void)run2Instance {
+    NSLog(@"%s", __func__);
 }
 
 + (void)run1Class {
+    NSLog(@"%s", __func__);
 }
 
 + (void)run2Class {
+    NSLog(@"%s", __func__);
 }
 
 @end

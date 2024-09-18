@@ -13,7 +13,16 @@
 
 void useCategory(void) {
     Person* person = [[Person alloc] init];
-    [person run];
+    [person run];putchar('\n');
+    [person run1Instance];[person run1Instance];putchar('\n');
+    [Person run1Class];[Person run2Class];putchar('\n');
+    
+    // 父类的分类
+    [person test1];[person test2];putchar('\n');
+    [Person testClassMethod1];[Person testClassMethod2];putchar('\n');
+    
+    // 由元类的继承链找到NSObject类对象的方法列表
+    [Person testClassMethod1];[Person testClassMethod2];
 }
 
 int main(int argc, const char * argv[]) {
@@ -26,14 +35,21 @@ int main(int argc, const char * argv[]) {
         //  看源码
         //  该分类下结构体的赋值
         
+        // 编译时分类本质就是一个结构体_category_t，里面存储着类名、类地址、实例方法列表、类方法列表、协议列表、属性列表
+        // 所以分类里面也可以遵守协议、添加属性
+        // 运行时Runtime就会让分类里面的信息合并到类里面
+        
+//        useCategory();
+        Person* person = [[Person alloc] init];
+//        person.height = 175;
+//        NSLog(@"%d", person.height);
+        
+        
+        
     }
     return 0;
 }
 
 /*
- _objc_init
- map_images （这是 rutime-new 里面的）->
- map_images_nolock ->
- _read_images（所有的类信息totalClasses）
- Discover categories. 
+ _objc_init（Runtime初始化）-> map_images（这是 rutime-new 里面的）-> map_images_nolock -> _read_images（主要处理所有的类信息totalClasses，加载模块、镜像）-> Discover categories.
  */

@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Person (PersonCategory) <NSCopying, NSCoding>
+@interface Person (PersonCategory)
 
 @property (nonatomic, assign)int height;
 

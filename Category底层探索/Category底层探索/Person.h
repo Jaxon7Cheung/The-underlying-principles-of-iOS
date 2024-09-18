@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign)int age;
 
-- (void)walk;
+- (void)run;
 
 @end
 
