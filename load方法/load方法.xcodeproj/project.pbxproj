@@ -15,6 +15,8 @@
 		A2C40EF12C9AE6320054625F /* Student+Test1.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C40EF02C9AE6320054625F /* Student+Test1.m */; };
 		A2C40EF42C9AE63A0054625F /* Student+Test2.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C40EF32C9AE63A0054625F /* Student+Test2.m */; };
 		A2C40EF72C9B3EAC0054625F /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C40EF62C9B3EAC0054625F /* Dog.m */; };
+		A2C40EFA2C9C1A200054625F /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C40EF92C9C1A200054625F /* Cat.m */; };
+		A2C40EFD2C9C1A320054625F /* TinyCat.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C40EFC2C9C1A320054625F /* TinyCat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +48,10 @@
 		A2C40EF32C9AE63A0054625F /* Student+Test2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Student+Test2.m"; sourceTree = "<group>"; };
 		A2C40EF52C9B3EAC0054625F /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
 		A2C40EF62C9B3EAC0054625F /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		A2C40EF82C9C1A200054625F /* Cat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
+		A2C40EF92C9C1A200054625F /* Cat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cat.m; sourceTree = "<group>"; };
+		A2C40EFB2C9C1A320054625F /* TinyCat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TinyCat.h; sourceTree = "<group>"; };
+		A2C40EFC2C9C1A320054625F /* TinyCat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TinyCat.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,10 @@
 				A2C40EF32C9AE63A0054625F /* Student+Test2.m */,
 				A2C40EF52C9B3EAC0054625F /* Dog.h */,
 				A2C40EF62C9B3EAC0054625F /* Dog.m */,
+				A2C40EF82C9C1A200054625F /* Cat.h */,
+				A2C40EF92C9C1A200054625F /* Cat.m */,
+				A2C40EFB2C9C1A320054625F /* TinyCat.h */,
+				A2C40EFC2C9C1A320054625F /* TinyCat.m */,
 			);
 			path = "load方法";
 			sourceTree = "<group>";
@@ -154,9 +164,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C40EFD2C9C1A320054625F /* TinyCat.m in Sources */,
 				A2C40EEE2C9AE6190054625F /* Student.m in Sources */,
 				A2C40EE52C9AE5DE0054625F /* Person.m in Sources */,
 				A2C40EF72C9B3EAC0054625F /* Dog.m in Sources */,
+				A2C40EFA2C9C1A200054625F /* Cat.m in Sources */,
 				A2C40EF12C9AE6320054625F /* Student+Test1.m in Sources */,
 				A2C40EEB2C9AE6010054625F /* Person+Test2.m in Sources */,
 				A2C40EE82C9AE5F50054625F /* Person+Test1.m in Sources */,

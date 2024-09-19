@@ -10,6 +10,8 @@
 #import "Person+Test1.h"
 #import "Person+Test2.h"
 #import <objc/runtime.h>
+#import "Cat.h"
+#import "TinyCat.h"
 
 void printMethodNamesOfClass(Class cls) {
     unsigned int count;
@@ -56,6 +58,8 @@ int main(int argc, const char * argv[]) {
         
 //        printMethodNamesOfClass(object_getClass([Person class]));
         
+        [Cat alloc];
+        [TinyCat alloc]; // （先初始化父类，再初始化子类）
         
     }
     return 0;
