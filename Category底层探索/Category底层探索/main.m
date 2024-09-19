@@ -52,4 +52,7 @@ int main(int argc, const char * argv[]) {
 
 /*
  _objc_init（Runtime初始化）-> map_images（这是 rutime-new 里面的）-> map_images_nolock -> _read_images（主要处理所有的类信息totalClasses，加载模块、镜像）-> Discover categories.
+ 
+ memmove，将指定内存移动到指定位置，保留原有方法等信息的完整性（用copy会覆盖）
+ memcopy，因为是从别的地方直接拷贝过来的，所以没必要使用底层更为复杂的memmove
  */
